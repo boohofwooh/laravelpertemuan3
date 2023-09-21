@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use ReCaptcha\RequestMethod\Post;
 use App\Http\Controllers\BukuController;
+use App\Models\Buku;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +39,10 @@ Route::get('/fnatic',[PostController::class,'fnaticesprort']);
 Route::get('/fpx',[PostController::class,'fpxesport']);
 
 Route::get('/',[PostController::class,'beranda']);
+
+Route::get('/buku/create',[BukuController::class,'create'])->name('buku.create');
+
+Route::post('/buku',[BukuController::class,'store'])->name('buku.store');
+
+Route::post('/buku/delete/{id}', [BukuController::class, 'destroy'])->name('buku.destroy');
 
