@@ -28,7 +28,6 @@ Route::get('/about', function () {
     ]);
 });
 
-Route::get('/buku', [BukuController::class,'index']);
 
 Route::get('/boom', [PostController::class,'boomesport']);
 
@@ -40,9 +39,17 @@ Route::get('/fpx',[PostController::class,'fpxesport']);
 
 Route::get('/',[PostController::class,'beranda']);
 
+Route::get('/buku', [BukuController::class,'index']);
+
 Route::get('/buku/create',[BukuController::class,'create'])->name('buku.create');
 
 Route::post('/buku',[BukuController::class,'store'])->name('buku.store');
 
 Route::post('/buku/delete/{id}', [BukuController::class, 'destroy'])->name('buku.destroy');
+
+Route::post('/buku/update/{id}', [BukuController::class, 'update'])->name('buku.update');
+
+Route::get('/buku/edit/{id}', [BukuController::class, 'edit'])->name('buku.edit');
+
+
 

@@ -22,6 +22,11 @@
                         <button onclick="return confirm('yakin mau dihapus?')">Hapus</button>
                     </form>
                 </td>
+                <td><form action="{{ route('buku.edit', $buku->id) }}" method="get">
+                        @csrf 
+                        <button>Edit</button>
+                    </form>
+                </td>
             </tr>
         @endforeach
     </tbody>
