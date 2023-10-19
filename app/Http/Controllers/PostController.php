@@ -74,6 +74,5 @@ class PostController extends Controller
     }
 
     public function beranda(){
-        return view('layouts/home');
     }
 }

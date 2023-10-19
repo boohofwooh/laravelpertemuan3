@@ -51,5 +51,7 @@ Route::post('/buku/update/{id}', [BukuController::class, 'update'])->name('buku.
 
 Route::get('/buku/edit/{id}', [BukuController::class, 'edit'])->name('buku.edit');
 
+Route::get('/buku/search', [BukuController::class, 'search'])->name('buku.search');
+
 
 
